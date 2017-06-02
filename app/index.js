@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import $ from 'jquery';
+import myownjs from "./myownjs";
 
 function component() {
   // var element = document.createElement('h1');
@@ -15,4 +16,5 @@ function component() {
 }
 
 document.body.appendChild(component());
-// console.log(1);
+console.log(myownjs);
+console.log(myownjs());
