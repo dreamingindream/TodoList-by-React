@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import TOdoInput from './TodoInput'
 
 class App extends Component {
   constructor(props){
@@ -24,7 +25,7 @@ class App extends Component {
       <div className="App">
         <h1>My TodoList</h1>
         <div className="inputWarpper">
-          <input type="text" value={this.state.newTodo} />
+          <TOdoInput content={this.state.newTodo}  />
         </div>
         <ol>
           {todos}
