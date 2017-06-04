@@ -1,12 +1,12 @@
  .App {
-   color: #333;
-   background: #fff;
-   margin: 2em;
-   padding: 0 1em;
-   min-height: 20em;
-   width: 30em;
-   position: relative;
- }
+  color: #333;
+  background: lightgoldenrodyellow;
+  margin: 2em;
+  padding: 0 1em;
+  min-height: 20em;
+  width: 30em;
+  position: relative;
+}
 /* a beautiful box-shadow effect: */
 .App:before, .App:after
 {
@@ -38,9 +38,9 @@
   right: 10px;
   left: auto;
 }
-.App > .todoList> li:nth-child(odd){
-  background: #eee;
+.App > .todoList > li:nth-child(odd){
+  background: #ffdead;
 }
-.App > .todoList> li:nth-child(even){
+.App > .todoList > li:nth-child(even){
   background: transparent;
 }
