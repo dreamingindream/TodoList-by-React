@@ -21,11 +21,12 @@ class App extends Component {
       return (
         <li key={index}>
           <TodoItems todo={item} 
-                     onToggle={this.toggle.bind(this)} />
+                     onToggle={this.toggle.bind(this)}
+                     onDelete={this.delete.bind(this)} />
         </li>
       )
     })
-    // console.log(todos);
+    console.log(todos);
 
     return (
       <div className="App">
@@ -46,6 +47,11 @@ class App extends Component {
 
   toggle(e, todo){
     todo.status = (todo.status === 'completed' ? '' : 'completed')
+    this.setState(this.state)
+  }
+
+  delete(event, todo){
+    todo.deleted = true
     this.setState(this.state)
   }
 
