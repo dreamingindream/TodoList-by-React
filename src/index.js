@@ -5,6 +5,6 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 ReactDOM.render(
-  <p>Why always "Hello, World" ? :(</p>,
-  document.getElementById('root')
-);
+  <App />,
+  document.getElementById("root")
+)
