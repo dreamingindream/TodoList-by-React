@@ -33,13 +33,17 @@ class App extends Component {
       <div className="App">
         <h1>My TodoList</h1>
         <div className="inputWarpper">
-          <TodoInput content={this.state.newTodo}  />
+          <TodoInput content={this.state.newTodo} onSubmit={this.addTodo} />
         </div>
         <ol>
           {todos}
         </ol>
       </div>
     )
+  }
+
+  addTodo(){
+    console.log("I need to add a todo item");
   }
 }
 
