@@ -11,29 +11,26 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      newTodo: "what is it?",
-      todoList: [
-        {id:1, title:"items1"},
-        {id:2, title:"items2"},
-        {id:3, title:"items3"}
-      ]
+      newTodo: "",
+      todoList: []
     }
   }
 
   render() {
     let todos = this.state.todoList.map((item,index)=>{
       return (
-        <li>
+        <li key={index}>
           <TodoItems todo={item} />
         </li>
       )
     })
+    console.log(todos);
 
     return (
       <div className="App">
         <h1>My TodoList</h1>
         <div className="inputWarpper">
-          <TodoInput content={this.state.newTodo} onSubmit={this.addTodo} />
+          <TodoInput content={this.state.newTodo} onSubmit={this.addTodo.bind(this)} />
         </div>
         <ol>
           {todos}
@@ -42,9 +39,25 @@ class App extends Component {
     )
   }
 
-  addTodo(){
-    console.log("I need to add a todo item");
+  addTodo(event){
+    this.state.todoList.push({
+      id: idMaker(),
+      title: event.target.value,
+      status: null,
+      deleted: false
+    })
+    this.setState({
+      newTodo: "",
+      todoList: this.state.todoList
+    })
   }
 }
+
+let id = 0;
+function idMaker(){
+  id +=1;
+  return id;
+}
+
 
 export default App;
