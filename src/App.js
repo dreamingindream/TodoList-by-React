@@ -8,12 +8,13 @@ import TodoInput from './TodoInput'
 import TodoItems from './TodoItems'
 
 import UserDialog from './UserDialog'
+import {getCurrentUser} from './leanCloud'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: {},
+      user: getCurrentUser() || {},
       newTodo: "",
       todoList: []
     }
@@ -35,7 +36,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>{this.state.user.username||'My'} 的待办事件：</h1>
+        <h1>{this.state.user.username||'我'} 的待办事件：</h1>
         <div className="inputWarpper">
           <TodoInput
             content={this.state.newTodo}
