@@ -13,6 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      user: {},
       newTodo: "",
       todoList: []
     }
@@ -34,7 +35,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>My TodoList</h1>
+        <h1>{this.state.user.username||'My'} 的待办事件：</h1>
         <div className="inputWarpper">
           <TodoInput
             content={this.state.newTodo}
@@ -45,9 +46,14 @@ class App extends Component {
         <ol className="todoList">
           {todos}
         </ol>
-        <UserDialog />
+        {this.state.user.id ? null : <UserDialog onSignUp={this.onSignUp.bind(this)}/>}
       </div>
     )
+  }
+
+  onSignUp(user){
+    this.state.user = user
+    this.setState(this.state)
   }
 
   toggle(e, todo){
