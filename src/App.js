@@ -7,14 +7,6 @@ import './App.css';
 import TodoInput from './TodoInput'
 import TodoItems from './TodoItems'
 
-import AV from 'leancloud-storage'
-var APP_ID = 'MW4SAI1x8PoEEWyox4Kw1ws7-gzGzoHsz';
-var APP_KEY = '2tXt4IdtN0xTTkC48lvvgk8P';
-AV.init({
-  appId: APP_ID,
-  appKey: APP_KEY
-});
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -36,7 +28,7 @@ class App extends Component {
         </li>
       )
     })
-    console.log(todos);
+    // console.log(todos);
 
     return (
       <div className="App">
